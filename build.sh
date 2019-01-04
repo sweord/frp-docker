@@ -10,14 +10,14 @@ latest_release_version() {
 frp_version=$(latest_release_version)
 
 docker build \
-  --tag "geektr/frp:$frp_version" \
-  --tag "geektr/frp:latest" \
+  --tag "sweord/frp:$frp_version" \
+  --tag "sweord/frp:latest" \
   --build-arg frp_version="$frp_version" \
   --compress \
   .
 
 tee <<EOF
 =========================
-docker push geektr/frp
+docker push sweord/frp
 =========================
 EOF
